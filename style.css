@@ -1,0 +1,564 @@
+/* ===== ESTILOS GENERALES ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Fuente personalizada Playfair Display */
+.playfair-display {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* ===== ESTILOS DE NAVEGACIÓN ===== */
+
+.nav {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav ul {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    display: inline-block; /* Coloca los elementos en línea */
+    margin: 0 10px; /* Espacio entre los botones */
+}
+
+.nav a {
+    color: #ffffff; /* Color del texto */
+    text-decoration: none; /* Quita el subrayado */
+    padding: 12px 20px; /* Espaciado interno para hacerlo parecer un botón */
+    border-radius: 6px; /* Bordes redondeados */
+    background-color: #e74c3c; /* Color de fondo rojo */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+    display: inline-block; /* Asegura que el padding y otras propiedades de bloque funcionen */
+}
+
+.nav a:hover {
+    background-color: #c0392b; /* Un rojo más oscuro */
+    transform: translateY(-2px); /* Eleva ligeramente el botón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el efecto elevado */
+}
+
+.nav a:active {
+    transform: translateY(1px); /* Húnde ligeramente el botón */
+    box-shadow: none; /* Quita la sombra al hacer clic */
+}
+
+/* Estilo para la página actual (opcional) */
+/* Para usarlo, añade class="current" al enlace de la página actual en tu HTML */
+/* Ejemplo: <li><a href="index.html" class="current">Inicio</a></li> */
+.nav a.current {
+    background-color: #c0392b; /* Color distintivo para la página activa */
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos básicos del cuerpo de la página */
+body { 
+    /* ===== FONDO CON IMAGEN ===== */
+    background-image: url('https://e0.pxfuel.com/wallpapers/644/990/desktop-wallpaper-naruto-akatsuki-anime-naruto-akatsuki-dark.jpg');
+    /* Cubrir toda la pantalla */
+    background-size: cover;
+    /* Fijar la imagen para efecto parallax */
+    background-attachment: fixed;
+    /* Centrar la imagen */
+    background-position: center;
+    /* No repetir la imagen */
+    background-repeat: no-repeat;
+    /* Color de respaldo por si la imagen no carga */
+    background-color: #2c3e50;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6; 
+    /* Altura mínima para que cubra toda la pantalla */
+    min-height: 100vh;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra más fuerte */
+    font-weight: bold;
+}
+
+/* ===== CONTENEDOR DE TARJETAS ===== */
+
+.contenedor-tarjetas {
+    text-align: center; /* Centra las tarjetas (que son inline-block) */
+    width: 100%;
+    margin: 0 auto 50px;
+    background-color: rgba(41, 40, 40, 0.212);
+    padding: 10px; /* Reducido para compensar el margen de las tarjetas */
+    box-sizing: border-box;
+}
+
+/* ===== ESTILOS DE TARJETAS ===== */
+
+.tarjeta {
+    background-color: #f4f4f4c5;
+    color: #333333;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    margin: 10px; /* Espacio entre tarjetas */
+
+    /* Comportamiento sin Flexbox */
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    max-width: 320px;
+    position: relative; /* Requerido para posicionar el botón */
+    min-height: 480px; /* Altura mínima para alinear botones */
+    text-align: left; /* Restablece la alineación del texto para el contenido de la tarjeta */
+}
+
+/* ===== MEDIA QUERIES PARA RESPONSIVIDAD (AJUSTE FINO) ===== */
+
+/* En pantallas pequeñas (hasta 47.9em o ~767px), las tarjetas se apilan */
+@media (max-width: 47.9em) {
+    .tarjeta {
+        display: block; /* Ocupa todo el ancho y permite centrado con margen */
+        width: 90%;
+        max-width: 320px; /* Mantenemos un max-width razonable */
+        margin: 20px auto; /* Centrado y espaciado vertical */
+        min-height: 0; /* La altura se ajustará al contenido */
+    }
+}
+ 
+
+
+/* ===== GRADIENTES RADIALES ===== */
+
+/* Primera tarjeta - Gradiente radial azul */
+.tarjeta:nth-child(1) {
+    background: radial-gradient(circle, #3498db, #2980b9, #1f4e79);
+    color: white;
+}
+
+/* Segunda tarjeta - Gradiente radial verde */
+.tarjeta:nth-child(2) {
+    background: radial-gradient(circle, #2ecc71, #27ae60, #1e8449);
+    color: white;
+}
+
+/* ===== AJUSTES DE TEXTO PARA GRADIENTES ===== */
+
+/* Título de la tarjeta con gradiente (solo cartas 1 y 2) */
+.tarjeta:nth-child(1) .titulo-tarjeta,
+.tarjeta:nth-child(2) .titulo-tarjeta {
+    /* Color del texto blanco para gradientes */
+    color: white;
+    /* Sombra de texto para mejor legibilidad */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ===== ESTILOS DE IMAGEN ===== */
+
+/* Estilos de la imagen */
+.imagen-tarjeta {
+    width: 100%;
+    height: 180px; /* Altura fija para uniformidad */
+    object-fit: contain; /* Recorta la imagen para que encaje sin deformarse */
+    transition: transform 0.3s ease;
+}
+ 
+
+/* ===== CONTENIDO DE LA TARJETA ===== */
+
+/* Contenido de la tarjeta */
+.contenido-tarjeta {
+    padding: 1.25em; /* 20px */
+    padding-bottom: 5em; /* Espacio reservado para el botón posicionado absolutamente */
+}
+
+/* Título de la tarjeta */
+.titulo-tarjeta {
+    font-size: 1.4rem;
+    margin-bottom: 0.54em; /* Cambiado de 12px */
+    font-weight: bold;
+}
+
+/* Descripción de la tarjeta */
+.descripcion-tarjeta {
+    line-height: 1.6;
+    margin-bottom: 1.26em; /* Cambiado de 20px */
+    font-size: 0.99rem;
+}
+
+/* ===== BOTÓN ===== */
+
+/* Botón de la tarjeta */
+.boton-tarjeta {
+    background-color: #e74c3c; /* Color de fondo rojo hexadecimal */
+    color: #ffffff; /* Color de texto blanco hexadecimal */
+    border: none;
+    padding: 0.86em 1.71em; /* Cambiado de 12px 24px */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    /* Posicionamiento absoluto en la parte inferior */
+    position: absolute;
+    bottom: 1.25em; /* 20px */
+    left: 1.25em;   /* 20px */
+    width: calc(100% - 2.5em); /* Ancho total menos el padding lateral */
+}
+
+/* Gradiente azul */
+.azul-gradiente {
+    background: radial-gradient(circle, #3498db, #2980b9, #1f4e79);
+}
+
+/* Gradiente verde */
+.verde-gradiente {
+    background: radial-gradient(circle, #2ecc71, #27ae60, #1e8449);
+}
+
+/* Código CSS */
+.ejemplo-gradiente code {
+    background-color: #f1f3f4;
+    color: #d73a49;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+    display: block;
+    margin: 10px 0;
+    border: 1px solid #e1e4e8;
+}
+
+/* Descripción del ejemplo */
+.ejemplo-gradiente p:last-child {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Información general */
+.info-gradientes {
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    padding: 25px;
+    border: 1px solid #2196f3;
+}
+
+/* Título de información */
+.info-gradientes h3 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Párrafo de información */
+.info-gradientes p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Subtítulos */
+.info-gradientes h4 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+/* Listas */
+.info-gradientes ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+/* Elementos de lista */
+.info-gradientes li {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Viñeta personalizada */
+.info-gradientes li::before {
+    content: "→";
+    color: #2196f3;
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Código de sintaxis */
+.info-gradientes code {
+    background-color: #f8f9fa;
+    color: #d73a49;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    border: 1px solid #dee2e6;
+    display: block;
+    margin: 10px 0;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+}
+
+/* ===== ESTILOS ESPECÍFICOS POR PERSONAJE ===== */
+
+/* ITACHI UCHIHA - Estilo elegante y misterioso */
+.titulo-tarjeta.titulo-tarjeta-itachi {
+    text-transform: uppercase;           /* ITACHI UCHIHA */
+    letter-spacing: 3px;                 /* Espaciado amplio para elegancia */
+    text-shadow: 
+        2px 2px 4px rgba(185, 0, 0, 0.6),    /* Sombra roja principal */
+        0 0 10px rgba(185, 0, 0, 0.3);       /* Resplandor rojo sutil */
+    color: #b90000 !important;               /* Color rojo Akatsuki */
+    font-weight: 800;                         /* Peso fuerte */
+} 
+
+/* HIDAN - Estilo agresivo y peligroso */
+.titulo-tarjeta.titulo-tarjeta-hidan {
+    text-transform: uppercase;           /* HIDAN */
+    letter-spacing: 4px;                 /* Espaciado muy amplio para intimidación */
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.8),      /* Sombra negra intensa */
+        1px 1px 2px rgba(139, 0, 0, 0.9);    /* Sombra roja secundaria */
+    color: #8b0000 !important;               /* Color rojo oscuro */
+    font-weight: 900;                         /* Peso extra fuerte */
+}
+
+/* PAIN - Estilo místico y poderoso */
+.titulo-tarjeta.titulo-tarjeta-pain {
+    text-transform: capitalize;          /* Pain */
+    letter-spacing: 2px;                 /* Espaciado moderado pero elegante */
+    text-shadow: 
+        2px 2px 4px rgba(128, 0, 128, 0.7),  /* Sombra púrpura Rinnegan */
+        0 0 15px rgba(128, 0, 128, 0.4);     /* Resplandor púrpura */
+    color: #800080 !important;               /* Color púrpura */
+    font-weight: 700;                         /* Peso fuerte */
+}
+
+/* OBITO - Estilo misterioso y dual */
+.titulo-tarjeta.titulo-tarjeta-obito {
+    text-transform: uppercase;           /* OBITO */
+    letter-spacing: 2.5px;               /* Espaciado variable para dualidad */
+    text-shadow: 
+        2px 2px 4px rgba(255, 165, 0, 0.6),  /* Sombra naranja Kamui */
+        0 0 12px rgba(255, 165, 0, 0.3);     /* Resplandor naranja */
+    color: #ff8c00 !important;               /* Color naranja */
+    font-weight: 600;                         /* Peso medio-fuerte */
+}
+
+/* ===== ESTILOS ESPECÍFICOS PARA DESCRIPCIONES ===== */
+
+/* Descripción de Itachi - Estilo elegante */
+.tarjeta:nth-child(1) .descripcion-tarjeta {
+    /* ESPACIADO: Espaciado cómodo para lectura */
+    letter-spacing: 0.4px;
+    /* TRANSFORMACIÓN: Sin transformación para legibilidad */
+    text-transform: none;
+    /* SOMBRA: Sombra sutil roja */
+    text-shadow: 0.5px 0.5px 1px rgba(185, 0, 0, 0.2);
+    /* Color de texto en RGB */
+    color: rgb(233, 238, 243);
+}
+
+/* Descripción de Hidan - Estilo agresivo */
+.tarjeta:nth-child(2) .descripcion-tarjeta {
+    /* ESPACIADO: Espaciado compacto para intensidad */
+    letter-spacing: 0.2px;
+    /* TRANSFORMACIÓN: Sin transformación */
+    text-transform: none;
+    /* SOMBRA: Sombra negra sutil */
+    text-shadow: 0.5px 0.5px 1px rgba(247, 4, 4, 0.3);
+    /* Color de texto en RGB */
+    color: rgb(235, 237, 240);
+}
+
+/* Descripción de Pain - Estilo místico */
+.tarjeta:nth-child(3) .descripcion-tarjeta {
+    /* ESPACIADO: Espaciado amplio para elegancia */
+    letter-spacing: 0.5px;
+    /* TRANSFORMACIÓN: Sin transformación */
+    text-transform: none;
+    /* SOMBRA: Sombra púrpura sutil */
+    text-shadow: 0.5px 0.5px 1px rgba(128, 0, 128, 0.2);
+    /* Color de texto en RGB */
+    color: rgb(52, 73, 94);
+}
+
+/* Descripción de Obito - Estilo misterioso */
+.tarjeta:nth-child(4) .descripcion-tarjeta {
+    /* ESPACIADO: Espaciado variable */
+    letter-spacing: 0.3px;
+    /* TRANSFORMACIÓN: Sin transformación */
+    text-transform: none;
+    /* SOMBRA: Sombra naranja sutil */
+    text-shadow: 0.5px 0.5px 1px rgba(255, 165, 0, 0.2);
+    /* Color de texto en RGBA con transparencia */
+    color: rgba(127, 140, 141, 0.9);
+}
+
+/* ===== ESTILOS PARA IMPRESIÓN ===== */
+@media print {
+    /* Ocultar elementos no esenciales para la impresión */
+    .nav, .contact-form button {
+        display: none;
+    }
+
+    /* Asegurar que el contenido principal ocupe todo el ancho */
+    body, .contenedor-tarjetas, .tarjeta {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: none !important; /* Sin fondos de color o imagen */
+    }
+
+    /* Forzar color de texto a negro para legibilidad y ahorro de tinta */
+    * {
+        color: #000 !important;
+        text-shadow: none !important;
+    }
+
+    /* Evitar que las tarjetas se rompan entre páginas */
+    .tarjeta {
+        page-break-inside: avoid;
+        margin-bottom: 20px !important; /* Añadir un poco de espacio */
+    }
+
+    /* Mostrar URLs de los enlaces */
+    a:after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* ===== IMAGEN DE FONDO RESPONSIVA ===== */
+/* En pantallas más pequeñas, usar una imagen de fondo diferente y más ligera */
+@media (max-width: 47.9em) { /* ~767px */
+    body {
+        /* Puede reemplazar esto con una imagen de fondo optimizada para móviles */
+        background-image: url('https://via.placeholder.com/800x1200/2c3e50/FFFFFF?text=Fondo+Móvil');
+    }
+}
+
+
+/* ===== FORMULARIO DE CONTACTO RESPONSIVE ===== */
+/* Estructura HTML recomendada:
+<form class="contact-form">
+    <h2>Contacto</h2>
+    <div class="form-group-container">
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="boton-formulario">Enviar</button>
+</form>
+*/
+
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2em;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 4em auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1.5em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #555;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    font-size: 1rem;
+}
+
+.boton-formulario {
+    width: 100%;
+    padding: 1em;
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton-formulario:hover {
+    background-color: #e74c3c;
+}
+
+/* En escritorio, colocar Nombre y Email en la misma línea */
+@media (min-width: 48em) { /* 768px */
+    .form-group-container {
+        /* Usamos un truco de text-align para espaciar los elementos inline-block */
+        text-align: justify;
+        /* Elimina el espacio sobrante debajo de los elementos inline-block */
+        font-size: 0; 
+    }
+    .form-group-container:after {
+        content: '';
+        width: 100%;
+        display: inline-block;
+    }
+
+    .form-group-container .form-group {
+        display: inline-block;
+        width: 48%; /* Ancho de cada campo */
+        vertical-align: top;
+        font-size: 1rem; /* Restablece el tamaño de fuente */
+    }
+}
