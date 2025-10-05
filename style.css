@@ -461,7 +461,7 @@ h1 {
 }
 
 
-
+/*forumlario */
 .contact-form {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 2em;
@@ -470,24 +470,24 @@ h1 {
     margin: 4em auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
+/* Título del formulario */
 .contact-form h2 {
     text-align: center;
     margin-bottom: 1em;
     color: #333;
 }
-
+/* Contenedor para agrupar Nombre y Email */
 .form-group {
     margin-bottom: 1.5em;
 }
-
+/* Etiquetas de los campos */
 .form-group label {
     display: block;
     margin-bottom: 0.5em;
     color: #555;
     font-weight: bold;
 }
-
+/* Campos de entrada y textarea */
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -497,7 +497,7 @@ h1 {
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
     font-size: 1rem;
 }
-
+/* Textarea específico */
 .boton-formulario {
     width: 100%;
     padding: 1em;
@@ -510,11 +510,11 @@ h1 {
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
-
+/* Botón: HOVER */
 .boton-formulario:hover {
     background-color: #e74c3c;
 }
-
+/* Contenedor para agrupar Nombre y Email */
 /* En escritorio, colocar Nombre y Email en la misma línea */
 @media (min-width: 48em) { /* 768px */
     .form-group-container {
@@ -528,7 +528,7 @@ h1 {
         width: 100%;
         display: inline-block;
     }
-
+/* Cada campo ocupa la mitad del contenedor */
     .form-group-container .form-group {
         display: inline-block;
         width: 48%; /* Ancho de cada campo */
@@ -536,3 +536,47 @@ h1 {
         font-size: 1rem; /* Restablece el tamaño de fuente */
     }
 }
+
+/* ===== CÓDIGO AÑADIDO PARA COMPLETAR REQUISITOS ===== */
+
+@media (max-width: 47.9em) {
+    body {
+        background-color: #3a506b; /* Color de fondo para móviles */
+    }
+}
+
+
+
+@media (min-width: 75em) { /* 1200px */
+    .contenedor-tarjetas {
+        width: 80%;
+        max-width: 1400px; /* Límite para que no se estire demasiado */
+    }
+}
+
+/*ajuste de la barra de navegacion */
+@media (max-width: 47.9em) {
+    .nav li {
+        display: block; /* Un elemento por línea */
+        margin: 10px 0; /* Espacio vertical */
+    }
+/* Centrar los enlaces */
+    .nav a {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/* Se ajusta el tamaño de los títulos en pantallas pequeñas para mejor legibilidad.
+ */
+@media (max-width: 47.9em) {
+    h1 {
+        font-size: 2rem; /* Reducir el tamaño del título principal */
+    }
+/* Ajustar el tamaño del título de las tarjetas */
+    .titulo-tarjeta {
+        font-size: 1.2rem; /* Reducir el título de las tarjetas */
+    }
+}
+
+ 
